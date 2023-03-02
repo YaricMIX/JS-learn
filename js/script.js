@@ -10,4 +10,31 @@ minus = (Number(firstnumber) - Number(secondnumber));
 multiply = (Number(firstnumber) * Number(secondnumber));
 divide = (Number(firstnumber) / Number(secondnumber));
 
-alert(`Plus ${plus}` + ` ` + `Minus ${minus}` + ` ` + `Multiply ${multiply}` + ` ` + `Divide ${divide}`);
+if(Number(secondnumber) == 0) divide = 'Division is impossible';
+
+
+if(firstnumber == '' || secondnumber == ''){
+	alert('Error')
+} else {
+	if(Number(firstnumber) < Number(secondnumber)) {
+
+		const action = confirm('Are you sure you want to proceed with the operation?');
+	
+		if(action == false){
+			alert(`Plus: ${plus}`);
+			alert(`Multiply: ${multiply}`);
+			alert(`Divide: ${divide}`);
+		} else{
+			alert(`Plus: ${plus}`);
+			alert(`Minus: ${minus}`);
+			alert(`Multiply: ${multiply}`);
+			alert(`Divide: ${divide}`);
+		}
+	
+	} else {
+		alert(`Plus: ${plus}`);
+		alert(`Minus: ${minus}`);
+		alert(`Multiply: ${multiply}`);
+		alert(`Divide: ${divide}`);
+	}
+}
