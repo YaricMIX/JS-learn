@@ -2,7 +2,7 @@ function isEmpty(obj) {
 	return Object.keys(obj).length === 0;
 }
 
-const obj = {name: 'John', age: 30};
+const obj = { name: 'John', age: 30 };
 console.log(isEmpty(obj));
 
 const user = {
