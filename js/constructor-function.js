@@ -1,5 +1,6 @@
-class Accumulator {
-	constructor(value) {
+function performAccumulatorOperations(initialValue) {
+	class Accumulator {
+		constructor(value) {
 		this.value = value;
 	}
 
@@ -10,10 +11,10 @@ class Accumulator {
 	decrement() {
 		this.value--;
 	}
-}
+	}
 
-class CancelableAccumulator extends Accumulator {
-	constructor(value) {
+	class CancelableAccumulator extends Accumulator {
+		constructor(value) {
 		super(value);
 		this.originalValue = value;
 	}
@@ -21,19 +22,10 @@ class CancelableAccumulator extends Accumulator {
 	clear() {
 		this.value = this.originalValue;
 	}
+	}
+
+	const accumulatorClass = Accumulator.bind(null, initialValue);
+	const cancelableAccumulatorClass = CancelableAccumulator.bind(null, initialValue);
+
+	return { AccumulatorClass: accumulatorClass, CancelableAccumulatorClass: cancelableAccumulatorClass };
 }
-const value = parseInt(prompt('Enter the initial value of Accumulator:'));
-
-const acc = new CancelableAccumulator(value);
-
-acc.increment();
-console.log(acc.value);
-
-acc.increment();
-console.log(acc.value);
-
-acc.decrement();
-console.log(acc.value);
-
-acc.clear();
-console.log(acc.value);
