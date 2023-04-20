@@ -1,7 +1,7 @@
 Array.prototype.pow = function(n) {
 let gradingArr = [];
 
-for (var i = 0; i < this.length; i++) {
+for (let i = 0; i < this.length; i++) {
 	let gradingVal = Math.pow(this[i], n);
 	gradingArr.push(gradingVal);
 }
